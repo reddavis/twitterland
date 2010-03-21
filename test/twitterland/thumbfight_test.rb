@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ThumbfightTest < Test::Unit::TestCase
-  include Twitterland
   
   context "With no valid terms" do
     should "return error" do
@@ -39,4 +38,5 @@ class ThumbfightTest < Test::Unit::TestCase
       tf.challenger2.should be_nil
     end
   end
+  
 end

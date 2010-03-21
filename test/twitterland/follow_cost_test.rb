@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class FollowCostTest < Test::Unit::TestCase
-  include Twitterland
   
   context "Getting follow cost" do
     should "work" do
@@ -16,4 +15,5 @@ class FollowCostTest < Test::Unit::TestCase
       follow_cost.political_index.should == 0.0
     end
   end
+  
 end

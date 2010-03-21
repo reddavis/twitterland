@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class TweetMemeTest < Test::Unit::TestCase  
+  
   context "When hitting the Core API" do
-
     should "display details for a url" do
       stub_get('http://api.tweetmeme.com/url_info.json?url=http%3A%2F%2Ftweetcongress.org', 'tweet_meme_url_info.json')
       info = Twitterland::TweetMeme.url_info('http://tweetcongress.org')
@@ -13,7 +13,6 @@ class TweetMemeTest < Test::Unit::TestCase
   end
   
   context "when hitting the Stories API" do
-    
     should "should return popular stories" do
       stub_get('http://api.tweetmeme.com/stories/popular.json', 'tweet_meme_popular.json')
       stories = Twitterland::TweetMeme::Stories.popular.stories
@@ -44,7 +43,6 @@ class TweetMemeTest < Test::Unit::TestCase
   end
   
   context "when hitting the Comments API" do
-
     should "should return the most recent comments along with url info" do
       stub_get('http://api.tweetmeme.com/comments/firehose.json', 'tweet_meme_comments.json')
       comments = Twitterland::TweetMeme::Comments.firehose.comments
@@ -61,7 +59,6 @@ class TweetMemeTest < Test::Unit::TestCase
   end
   
   context "when hitting the Analytics API" do
-
     should "should return a uid" do
       stub_get('http://api.tweetmeme.com/analytics/build.json?appid=1234&apikey=OU812&url=http%3A%2F%2Ftweetcongress.org', 'tweet_meme_analytics_build.json')
       uid = Twitterland::TweetMeme::Analytics.build(1234, 'OU812', 'http://tweetcongress.org')
@@ -74,10 +71,6 @@ class TweetMemeTest < Test::Unit::TestCase
       built.builtURLs.size.should == 1
       built.builtURLs.first.name.should == 'tweetcongress.org'
     end
-    
-
   end
-  
-  
   
 end

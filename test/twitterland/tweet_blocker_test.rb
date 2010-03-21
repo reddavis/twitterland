@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class TweetBlockerTest < Test::Unit::TestCase
-  include Twitterland
   
   context "Getting TweetBlocker info" do
     should "get grade results" do
@@ -22,4 +21,5 @@ class TweetBlockerTest < Test::Unit::TestCase
       Twitterland::TweetBlocker.rate_limit.remaining_hits.should == 98
     end
   end
+  
 end

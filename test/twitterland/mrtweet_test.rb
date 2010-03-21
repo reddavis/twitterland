@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class MrtweetTest < Test::Unit::TestCase
-  include Twitterland
-  
+    
   context "Getting mrtweet info" do
     setup do
       stub_get 'http://api.mrtweet.com:80/v1/is_user/bradleyjoyce/OU812.json', 'mrtweet_is_user.json'
@@ -34,7 +33,7 @@ class MrtweetTest < Test::Unit::TestCase
     should "recommend a user" do
       stub_post 'http://api.mrtweet.com:80/v1/recommend/bradleyjoyce/OU812.json', 'mrtweet_success.json'
       @mrtweet.recommend("pengwynnn", "Wynn is the man!").should == true
-    end
-    
+    end  
   end
+  
 end

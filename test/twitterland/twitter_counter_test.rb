@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class TwitterCounterTest < Test::Unit::TestCase
-  include Twitterland
   
   context "Getting twitter counter numbers" do
     should "work" do
@@ -18,4 +17,5 @@ class TwitterCounterTest < Test::Unit::TestCase
       counter_stats.totals.find{|total| total == '2008-11-07'} == 630
     end
   end
+  
 end

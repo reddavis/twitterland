@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class TwitterGraderTest < Test::Unit::TestCase
-  include Twitterland
   
   context "Getting twitter grade" do
     should "work" do
@@ -9,4 +8,5 @@ class TwitterGraderTest < Test::Unit::TestCase
       Twitterland::TwitterGrader.grade("bradleyjoyce", "OU812").should == 98.4183
     end
   end
+  
 end

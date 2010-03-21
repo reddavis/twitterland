@@ -1,10 +1,8 @@
 require 'test_helper'
 
 class FollerMeTest < Test::Unit::TestCase
-  include Twitterland
-  
-  context "When hitting the API" do
     
+  context "When hitting the API" do  
     should "should display all terms for a user" do
       stub_get('http://api.foller.me/pengwynn/all.json', 'foller_me_all.json')
       result = Twitterland::FollerMe.terms('pengwynn')

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class BackTweetsTest < Test::Unit::TestCase
-  include Twitterland
 
   context "Hitting the BackTweets API" do
     should "return tweets referencing a URL" do
@@ -14,7 +13,6 @@ class BackTweetsTest < Test::Unit::TestCase
       last_tweet.id = 1642929098
       last_tweet.from_user_id = 383935
       last_tweet.from_user = 'Curvezilla'
-
     end
 
     should "raise Invalid key if bad key" do
@@ -24,4 +22,5 @@ class BackTweetsTest < Test::Unit::TestCase
       end
     end
   end
+  
 end
