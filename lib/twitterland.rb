@@ -3,11 +3,10 @@ $:.unshift(File.dirname(__FILE__))
 require 'forwardable'
 require 'rubygems'
 
-# Gems
-gem 'mash', '0.0.3'
+gem "mash", "0.0.3"
 require 'mash'
 
-gem 'httparty', '>= 0.4.5'
+gem "httparty", "0.4.5"
 require 'httparty'
 
 # Files

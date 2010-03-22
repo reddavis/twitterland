@@ -1,17 +1,17 @@
-require 'rubygems'
-require 'test/unit'
-require 'shoulda'
-require 'mocha'
-require 'fakeweb'
-
-gem 'jnunemaker-matchy', '0.4.0'
-require 'matchy'
-
-FakeWeb.allow_net_connect = false
-
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'twitterland'
+require 'test/unit'
+
+require 'matchy'
+require 'mocha'
+require 'fakeweb'
+require 'shoulda'
+
+gem 'jnunemaker-matchy'
+require 'matchy'
+
+FakeWeb.allow_net_connect = false
 
 class Test::Unit::TestCase
   custom_matcher :be_nil do |receiver, matcher, args|
